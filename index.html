@@ -1,15 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/main.css">
     <title>Meme Generator</title>
 </head>
-<body>
-    
-    <script src="/js/controller.js"></script>
-    <script src="/js/services/meme-service.js"></script>
-    <script src="/js/controller.js"></script>
+
+<body class="flex">
+
+    <header class="flex">
+        <div class="logo">Logo</div>
+        <div class="right flex">
+            <div class="gallery-button"><a href="">Gallry</a></div>
+            <div class="about"> <a href="">About</a></div>
+        </div>
+    </header>
+
+
+    <div class="content">
+        <div class="bar flex">
+            <div class="search"><img src="/css/imgs/magnifyingGlass.png " alt="">Search...</div>
+            <div class="filters">Filters</div>
+            <button class="more"> More</button>
+        </div>
+
+        <div class="meme-gallery">
+            <div><img src="/css/imgs/meme-imgs (square)/1.jpg"> </div>
+            <div><img src="/css/imgs/meme-imgs (square)/2.jpg"> </div>
+            <div><img src="/css/imgs/meme-imgs (square)/3.jpg"> </div>
+            <div><img src="/css/imgs/meme-imgs (square)/4.jpg"> </div>
+            <div><img src="/css/imgs/meme-imgs (square)/5.jpg"> </div>
+            <div><img src="/css/imgs/meme-imgs (square)/6.jpg"> </div>
+            <div><img src="/css/imgs/meme-imgs (square)/7.jpg"> </div>
+            <div><img src="/css/imgs/meme-imgs (square)/8.jpg"> </div>
+            <div><img src="/css/imgs/meme-imgs (square)/9.jpg"> </div>
+            <div><img src="/css/imgs/meme-imgs (square)/10.jpg"> </div>
+            <div><img src="/css/imgs/meme-imgs (square)/11.jpg"> </div>
+            <div><img src="/css/imgs/meme-imgs (square)/12.jpg"> </div>
+            <div><img src="/css/imgs/meme-imgs (square)/13.jpg"> </div>
+        </div>
+    </div>
+    <section class="meme-editor hide"></section>
+    <script src="/js/memeController.js"></script>
+    <script src="/js/services/memeController.js"></script>
 </body>
+
 </html>
