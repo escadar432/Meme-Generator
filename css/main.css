@@ -7,7 +7,7 @@
 
 @font-face {
     font-family: lasser;
-    src: url(./css/fonts/LarsseitMedium.otf);
+    src: url(./fonts/LarsseitMedium.otf);
 }
 
 body {
@@ -114,7 +114,7 @@ a {
     padding-inline-start: 2em;
     padding-inline: 1.5em;
 
-    border-radius: 40%;
+    border-radius: 40;
     margin: 1.2em;
 
     cursor: pointer;
