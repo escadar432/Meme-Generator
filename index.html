@@ -8,7 +8,7 @@
     <title>Meme Generator</title>
 </head>
 
-<body class="flex">
+<body onload="init()" class="flex">
 
     <header class="flex">
         <div class="logo">Logo</div>
@@ -41,10 +41,14 @@
             <div><img src="/css/imgs/meme-imgs (square)/12.jpg"> </div>
             <div><img src="/css/imgs/meme-imgs (square)/13.jpg"> </div>
         </div>
-    </div>
-    <section class="meme-editor hide"></section>
-    <script src="/js/memeController.js"></script>
-    <script src="/js/services/memeController.js"></script>
+        </div>
+        <section>
+            <canvas id="canvas" width="400" height="400"></canvas>
+
+        </section>
+        <section class="meme-editor hide"></section>
+        <script src="/js/memeController.js"></script>
+        <script src="/js/services/memeService.js"></script>
 </body>
 
 </html>
