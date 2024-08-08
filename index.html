@@ -18,27 +18,56 @@
         </div>
     </header>
 
-
     <div class="content">
         <div class="bar flex">
-            <div class="search"><img src="./css/imgs/magnifyingGlass.png " alt=""> Search   </div>
+            <div class="search"> <select onchange="onSetFilterBy(this.value)">
+                    <option value="">All</option><option>Funny</option><option>Trump</option>
+                    <option>Politics</option>
+                   
+                </select> <img src="./css/imgs/magnifyingGlass.png " alt=""> Search </div>
             <div class="filters">Filters</div>
             <button class="more"> More</button>
         </div>
 
-        <div class="meme-gallery">
-    
-        </div>
-        </div>
-        <section class="hide">
-            <canvas id="canvas" width="400" height="400"></canvas>
-        </section>
-        <section class="meme-editor hide"></section>
+        <div class="meme-gallery"></div>
 
-        <script src="./js/memeController.js"></script>
-        <script src="./js/services/memeService.js"></script>
-        <script src="./js/services/storage.js"></script>
-        <script src="./js/galleryController.js"></script>
+        <div class="meme-editor hide flex ">
+            <section>
+                <canvas id="canvas" width="400" height="400"></canvas>
+                <span type="text" id="onUperTextInputSpan"
+                    style="position:absolute;left:50px;top:50px;width:40%;"></span>
+                <span type="text" id="onLowerTextInputSpan" style="position:absolute;left:50px;top:150px;width:40%;">
+                </span>
+            </section>
+
+            <div class="edit-div">
+                <form id="user-form">
+                    <input type="text" name="topText" id="topText" placeholder="Top Text"> <br>
+                    <input type="text" name="bottomText" id="bottomText" placeholder="Bottom Text"> <br>
+
+                    <label for="color-line">Select line color</label>
+                    <input type="color" id="strokeColor" name="strokeColor" value="#d28be0" />
+
+                    <label for="fillColor">Select fill color</label>
+                    <input type="color" id="fillColor" name="fillColor" value="#ffffff" />
+
+                    <label>Line Width - <span class="line-width-value">3</span><br>
+                        <input value="3" min="1" max="8" name="lineWidth" id="lineWidth" type="range">
+                    </label>
+                    <button> <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download as
+                            jpeg</a></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./js/services/memeService.js"></script>
+    <script src="./js/services/storage.js"></script>
+    <script src="./js//services/galleryService.js"></script>
+    <script src="./js/memeController.js"></script>
+    <script src="./js/galleryController.js"></script>
+
 </body>
 
 </html>

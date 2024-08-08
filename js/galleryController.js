@@ -1,38 +1,52 @@
 'use strict'
-function init() {
 
+function init() {
     renderGallery()
 }
-function renderGallery() {
-    // const memes = loadFromStorage('memeDB');
-    // if (!memes) return;
+//FILTER 
+//QUERY PARAMS
+//PAGENATION
 
-    var strHtml = gImgs.map(meme => {
-        return `
-            <div class="meme">
-                <img src="${meme.url}" alt="meme image" onclick="onImgSelect(${meme.id})">
-            </div`
-    }).join('');
+function renderGallery(filterBy = '') {
 
-    var elGallery = document.querySelector('.meme-gallery')
-    elGallery.innerHTML += strHtml
+
+        const strHtml = gImgs.map(({ id, url }) => {
+            return `
+                <div class="meme">
+                    <img src="${url}" alt="meme image" onclick="onImgSelect(${id},'${url}')">
+                </div>`;
+        }).join('')
+        const elGallery = document.querySelector('.meme-gallery')
+        elGallery.innerHTML = strHtml
+    }
+    
+    // let imgs = localStorage.getItem(STORAGE_KEY)
+
+    // if (imgs) imgs = JSON.parse(imgs)
+    // else imgs = getImgs()
+
+    // if (imgs && imgs.length > 0) {
+    //     if (filterBy) imgs = getMemeByKeyword()
+
+    //     const strHtml = imgs.map(({ id, url }) => {
+    //         return `
+    //             <div class="meme">
+    //                 <img src="${url}" alt="meme image" onclick="onImgSelect(${id},'${url}')">
+    //             </div>`;
+    //     }).join('')
+    //     const elGallery = document.querySelector('.meme-gallery')
+    //     elGallery.innerHTML = strHtml
+    // }
+
+
+function onSetFilterBy(filterBy) {
+    renderGallery(filterBy)
+}
+function onImgSelect(id, url) {
+    renderMeme(id, url)
 }
 
-var gImgs = [
-    { id: 1, url: 'css/imgs/meme-imgs-square/p1.jpg', keywords: ['funny', 'cat'] },
-    { id: 2, url: 'css/imgs/meme-imgs-square/p2.jpg', keywords: ['funny', 'cat'] },
-    { id: 4, url: 'css/imgs/meme-imgs-square/p3.jpg', keywords: ['animal', 'dog'] },
-    { id: 5, url: 'css/imgs/meme-imgs-square/p4.jpg', keywords: ['funny', 'cat'] },
-    { id: 6, url: 'css/imgs/meme-imgs-square/p5.jpg', keywords: ['funny', 'cat'] },
-    { id: 7, url: 'css/imgs/meme-imgs-square/p6.jpg', keywords: ['wild', 'cat'] },
-    { id: 8, url: 'css/imgs/meme-imgs-square/p7.jpg', keywords: ['funny', 'cat'] }
-];
 
-function onImgSelect(imgId) {
-    // Assuming this function opens the editor and selects the image
-    console.log('Image selected:', imgId)
-    setImg(imgId)
-    // Your logic to open the editor and select the image goes here
+function getImgById(id) {
+    return gImgs.find(img => img.id === id)
 }
-
-

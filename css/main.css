@@ -7,7 +7,7 @@
 
 @font-face {
     font-family: lasser;
-    src: url(./fonts/LarsseitMedium.otf);
+    src: url(./fonts/LarsseitMedium.otf)
 }
 
 body {
@@ -57,6 +57,7 @@ a {
     text-decoration: none;
     color: white;
 }
+
 .content {
     background-color: #88898E;
     flex: 1;
@@ -87,9 +88,9 @@ a {
 
 }
 
-.search img{
+.search img {
     width: 20px;
-    position:absolute;
+    position: absolute;
     right: 20px;
 }
 
@@ -141,10 +142,78 @@ a {
 
 }
 
-img{
+img {
     width: 100%;
 }
 
-.hide{
+.hide {
     display: none;
+}
+
+.meme-editor {
+    gap: 2em;
+    justify-content: center;
+    margin: 4em;
+    align-self: normal;
+
+}
+
+.edit-div {
+    margin: 5em;
+    background-color: #fff;
+}
+
+
+.edit-div {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    background-color: #444;
+    padding: 1em;
+    border-radius: 20px;
+}
+
+label {
+    margin-bottom: 0.5em;
+}
+
+input[type="color"] {
+    width: 100%;
+    padding: 0.5em;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 1em;
+}
+
+.line-width {
+    width: 100%;
+}
+
+button {
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 20px;
+    background-color: #9e97e0;
+    color: white;
+    cursor: pointer;
+}
+
+canvas {
+    position: relative;
+    background-color: #fff;
+}
+
+
+#onUperTextInputSpan {
+    position: absolute;
+    left: 50px;
+    top: 150px;
+    width: 40%;
+}
+
+#onLowerTextInputSpan{
+    position: absolute;
+    left: 50px;
+    top: 150px;
+    width: 40%;
 }
