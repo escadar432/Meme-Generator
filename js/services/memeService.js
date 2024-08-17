@@ -1,7 +1,7 @@
 'use strict'
 
 
-var gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
+var gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2}
 
 function getMemeById(memeId) {
     return gMeme.find(meme => meme.id === memeId)
@@ -13,9 +13,6 @@ function updateMeme(memeId) {
     return meme
 }
 
-function crateMeme() {
-}
-
 
 function _saveCarsToStorage() {
     saveToStorage(STORAGE_KEY, gMeme)
@@ -23,6 +20,8 @@ function _saveCarsToStorage() {
 
 function onTextInput(){
 }
+
+
 var gMeme = [{
         selectedImgId: 1,
         selectedLineIdx: 6,

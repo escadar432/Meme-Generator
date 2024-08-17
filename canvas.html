@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Demo</title>
+    <style>
+        canvas {
+            background-color: #cc8d8d;
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas style="width:300px; height: 300px; margin: 100px 100px;"></canvas>
+
+    <input id="txt">
+
+    <p id="values"></p>
+
+    <script>
+
+        var gElCanvas = document.querySelector('canvas')
+        var gCtx = gElCanvas.getContext('2d')
+
+        var txt = document.getElementById('txt')
+        const log = document.getElementById("values");
+
+        txt.addEventListener("input", updateValue)
+
+        var x = 10
+        var y = 10
+
+
+
+        function updateValue(e) {
+
+            log.textContent = e.target.value
+            console.log(e.data)
+            gCtx.fillText(e.data, x, y)
+
+            y++
+            x++
+        }
+
+
+    </script>
+</body>
+
+</html>
